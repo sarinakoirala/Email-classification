@@ -5,6 +5,19 @@ import nltk
 from nltk.corpus import stopwords
 from nltk.stem.porter import PorterStemmer
 
+
+
+try:
+    nltk.data.find('tokenizers/punkt')
+except LookupError:
+    nltk.download('punkt', quiet=True)
+
+try:
+    nltk.data.find('corpora/stopwords')
+except LookupError:
+    nltk.download('stopwords', quiet=True)
+
+
 # Page config
 st.set_page_config(page_title="Spam Classifier", page_icon="📩", layout="centered")
 
